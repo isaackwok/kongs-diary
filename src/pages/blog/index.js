@@ -18,7 +18,7 @@ const BlogPage = ({ data }) => {
 }
 
 export const query = graphql`
-query MyQuery {
+query {
     allContentfulBlogPost(sort: {fields: publishDate, order: DESC}) {
       edges {
         node {

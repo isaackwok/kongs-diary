@@ -22,7 +22,7 @@ const Layout = ({ children }) => {
 
 const NavigationBar = () => {
     return (
-        <nav className="sticky top-0 bg-white border-b">
+        <nav className="sticky top-0 bg-white border-b z-10">
             <div className="flex p-4 justify-between container mx-auto items-baseline">
                 <Link to="/" className="mr-8 text-xl text-primary">港港日記</Link>
                 <NavigationMenu className="hidden md:flex" items={linkItems} />

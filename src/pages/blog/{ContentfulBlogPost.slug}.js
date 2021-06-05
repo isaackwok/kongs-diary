@@ -2,13 +2,15 @@ import React, { useEffect } from "react"
 import { graphql } from "gatsby"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 import hljs from "highlight.js"
-import "highlight.js/scss/atom-one-dark.scss"
 import { ArrowLeftIcon } from "@heroicons/react/solid"
 import { Link } from "gatsby"
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import { Helmet } from "react-helmet"
+import "highlight.js/scss/atom-one-dark.scss"
 
 const BlogPost = ({ data }) => {
     const blogPost = data.contentfulBlogPost
+    const heroImage = getImage(blogPost.heroImage)
     useEffect(() => {
         hljs.highlightAll()
     }, [])
@@ -26,7 +28,7 @@ const BlogPost = ({ data }) => {
                     {blogPost.title}
                     <div className="mt-2 text-base text-gray-400 font-normal">{blogPost.publishDate}</div>
                 </h1>
-
+                <GatsbyImage className="mb-4" image={heroImage} alt={blogPost.heroImage.title} />
                 <MDXRenderer className="prose">{blogPost.body.childMdx.body}</MDXRenderer>
             </article>
         </div>
@@ -41,8 +43,9 @@ export const query = graphql`
         publishDate(locale: "zh-tw", fromNow: true)
         tags
         heroImage {
+            title
             description
-            gatsbyImageData
+            gatsbyImageData(placeholder: BLURRED)
         }
         body {
             childMdx {
