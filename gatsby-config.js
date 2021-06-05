@@ -1,6 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: "Kong Kong's Diary",
+    siteUrl: `https://kongsdiary.gatsbyjs.io`,
   },
   plugins: [
     {
