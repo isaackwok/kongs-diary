@@ -3,6 +3,8 @@ import { graphql } from "gatsby"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 import hljs from "highlight.js"
 import "highlight.js/scss/atom-one-dark.scss"
+import { ArrowLeftIcon } from "@heroicons/react/solid"
+import { Link } from "gatsby";
 
 const BlogPost = ({ data }) => {
     const blogPost = data.contentfulBlogPost
@@ -10,11 +12,17 @@ const BlogPost = ({ data }) => {
         hljs.highlightAll()
     }, [])
     return (
-        <article className="prose prose-green">
-            <h1>{blogPost.title}</h1>
-            <h3>{blogPost.publishDate}</h3>
-            <MDXRenderer className="prose">{blogPost.body.childMdx.body}</MDXRenderer>
-        </article>
+        <div className="flex flex-col gap-4 max-w-prose mx-auto">
+            <Link to="/blog" className="inline-flex items-center gap-2 hover:text-primary">
+                <ArrowLeftIcon className="h-4 w-4 inline" />
+                Blogs
+            </Link>
+            <article className="prose prose-green">
+                <h1>{blogPost.title}</h1>
+                <h3>{blogPost.publishDate}</h3>
+                <MDXRenderer className="prose">{blogPost.body.childMdx.body}</MDXRenderer>
+            </article>
+        </div>
     )
 }
 
