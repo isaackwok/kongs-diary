@@ -32,9 +32,9 @@ const NavigationBar = () => {
 
 const NavigationMenu = ({ items, className }) => {
     return (
-        <div className={classnames(className, "flex gap-8 text-gray-500 font-mono")}>
+        <div className={classnames(className, "flex text-gray-500 font-mono")}>
             {items.map(item => (
-                <Link to={item.to} key={item.to} className="hover:text-gray-700" activeClassName="text-primary">
+                <Link to={item.to} key={item.to} className="hover:text-gray-700 ml-8" activeClassName="text-primary">
                     {item.text}
                 </Link>
             ))}

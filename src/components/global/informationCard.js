@@ -7,8 +7,8 @@ import React from 'react'
 const InformationCard = ({ info }) => {
     const avator = getImage(info.avator)
     return (
-        <div className="p-4 flex md:flex-col items-center gap-4">
-            <div>
+        <div className="p-4 flex md:flex-col items-center">
+            <div className="mb-4">
                 <GatsbyImage
                     className="w-32 h-32 md:w-40 md:h-40 rounded-full border-4 border-primary shadow-lg"
                     imgClassName="object-cover rounded-full"
@@ -20,11 +20,11 @@ const InformationCard = ({ info }) => {
                 <p>{info.jobTitle}</p>
                 <p>{info.company}</p>
                 <p>{info.location}</p>
-                <p className="mt-4 flex gap-4 text-xl">
-                    <a className="hover:text-primary" target="_blank" rel="noreferrer" href={`mailto:${info.eMail}`}><FontAwesomeIcon icon={faEnvelope} /></a>
-                    <a className="hover:text-primary" target="_blank" rel="noreferrer" href={info.github}><FontAwesomeIcon icon={faGithub} /></a>
-                    <a className="hover:text-primary" target="_blank" rel="noreferrer" href={info.facebook}><FontAwesomeIcon icon={faFacebook} /></a>
-                    <a className="hover:text-primary" target="_blank" rel="noreferrer" href={info.instagram}><FontAwesomeIcon icon={faInstagram} /></a>
+                <p className="mt-4 flex text-xl">
+                    <a className="hover:text-primary mx-2" target="_blank" rel="noreferrer" href={`mailto:${info.eMail}`}><FontAwesomeIcon icon={faEnvelope} /></a>
+                    <a className="hover:text-primary mx-2" target="_blank" rel="noreferrer" href={info.github}><FontAwesomeIcon icon={faGithub} /></a>
+                    <a className="hover:text-primary mx-2" target="_blank" rel="noreferrer" href={info.facebook}><FontAwesomeIcon icon={faFacebook} /></a>
+                    <a className="hover:text-primary mx-2" target="_blank" rel="noreferrer" href={info.instagram}><FontAwesomeIcon icon={faInstagram} /></a>
                 </p>
             </div>
         </div>
