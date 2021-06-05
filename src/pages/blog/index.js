@@ -1,11 +1,15 @@
 import React from "react"
 import BlogCard from "../../components/page/blog/blogCard";
 import { graphql } from "gatsby"
+import { Helmet } from "react-helmet"
 
 const BlogPage = ({ data }) => {
   const blogPosts = data.allContentfulBlogPost.edges
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+    <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
+      <Helmet>
+        <title>{`Blog | ${process.env.SITE_TITLE}`}</title>
+      </Helmet>
       {blogPosts.map(blog => (
         <BlogCard blog={blog.node} key={blog.node.slug} />
       ))}
@@ -27,9 +31,9 @@ query MyQuery {
             title
             gatsbyImageData(height: 100, width: 100, cropFocus: CENTER, placeholder: BLURRED)
           }
-description {
-    description
-}
+          description {
+              description
+          }
         }
       }
     }
