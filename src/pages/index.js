@@ -8,20 +8,22 @@ const HomePage = ({ data }) => {
   const info = { ...data.allContentfulAbout.edges[0].node }
   const blogPosts = data.allContentfulBlogPost.edges
   return (
-    <div className="flex flex-col mx-auto divide-y">
+    <>
       <Helmet>
         <title>{process.env.SITE_TITLE}</title>
       </Helmet>
-      <InformationCard info={info} />
-      <div className="py-4">
-        <p className="mt-4 mb-8 text-xl text-center text-gray-500">Blogs</p>
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
-          {blogPosts.map(blog => (
-            <BlogCard blog={blog.node} key={blog.node.slug} />
-          ))}
+      <div className="flex flex-col mx-auto divide-y">
+        <InformationCard info={info} />
+        <div className="py-4">
+          <p className="mt-4 mb-8 text-xl text-center text-gray-500">Blogs</p>
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
+            {blogPosts.map(blog => (
+              <BlogCard blog={blog.node} key={blog.node.slug} />
+            ))}
+          </div>
         </div>
       </div>
-    </div>
+    </>
   )
 }
 

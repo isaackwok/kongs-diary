@@ -15,23 +15,25 @@ const BlogPost = ({ data }) => {
         hljs.highlightAll()
     }, [])
     return (
-        <div className="flex flex-col gap-4 max-w-prose mx-auto">
+        <>
             <Helmet>
                 <title>{`${blogPost.title} ｜ ${process.env.SITE_TITLE}`}</title>
             </Helmet>
-            <Link to="/blog" className="inline-flex items-center gap-2 hover:text-primary">
-                <ArrowLeftIcon className="h-4 w-4 inline" />
+            <div className="flex flex-col gap-4 max-w-prose mx-auto">
+                <Link to="/blog" className="inline-flex items-center gap-2 hover:text-primary">
+                    <ArrowLeftIcon className="h-4 w-4 inline" />
                 Blogs
             </Link>
-            <article className="prose prose-green mt-4">
-                <h1>
-                    {blogPost.title}
-                    <div className="mt-2 text-base text-gray-400 font-normal">{blogPost.publishDate}</div>
-                </h1>
-                <GatsbyImage className="mb-4" image={heroImage} alt={blogPost.heroImage.title} />
-                <MDXRenderer className="prose">{blogPost.body.childMdx.body}</MDXRenderer>
-            </article>
-        </div>
+                <article className="prose prose-green mt-4">
+                    <h1>
+                        {blogPost.title}
+                        <div className="mt-2 text-base text-gray-400 font-normal">{blogPost.publishDate}</div>
+                    </h1>
+                    <GatsbyImage className="mb-4" image={heroImage} alt={blogPost.heroImage.title} />
+                    <MDXRenderer className="prose">{blogPost.body.childMdx.body}</MDXRenderer>
+                </article>
+            </div>
+        </>
     )
 }
 

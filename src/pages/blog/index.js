@@ -6,14 +6,16 @@ import { Helmet } from "react-helmet"
 const BlogPage = ({ data }) => {
   const blogPosts = data.allContentfulBlogPost.edges
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
+    <>
       <Helmet>
         <title>{`Blog | ${process.env.SITE_TITLE}`}</title>
       </Helmet>
-      {blogPosts.map(blog => (
-        <BlogCard blog={blog.node} key={blog.node.slug} />
-      ))}
-    </div>
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
+        {blogPosts.map(blog => (
+          <BlogCard blog={blog.node} key={blog.node.slug} />
+        ))}
+      </div>
+    </>
   )
 }
 

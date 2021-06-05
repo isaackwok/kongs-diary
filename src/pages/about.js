@@ -7,15 +7,17 @@ import React from 'react'
 const AboutPage = ({ data }) => {
   const info = { ...data.allContentfulAbout.edges[0].node }
   return (
-    <div className="flex flex-col max-w-prose mx-auto divide-y">
+    <>
       <Helmet>
         <title>{`About | ${process.env.SITE_TITLE}`}</title>
       </Helmet>
-      <InformationCard info={info} />
-      <article className="py-4 prose">
-        <MDXRenderer>{info.intro.childMdx.body}</MDXRenderer>
-      </article>
-    </div>
+      <div className="flex flex-col max-w-prose mx-auto divide-y">
+        <InformationCard info={info} />
+        <article className="py-4 prose">
+          <MDXRenderer>{info.intro.childMdx.body}</MDXRenderer>
+        </article>
+      </div>
+    </>
   )
 }
 
