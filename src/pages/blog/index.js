@@ -1,5 +1,5 @@
 import React from "react"
-import BlogCard from "../../components/page/blog/blogCard";
+import BlogCard from "../../components/page/blog/blogCard"
 import { graphql } from "gatsby"
 import { Helmet } from "react-helmet"
 

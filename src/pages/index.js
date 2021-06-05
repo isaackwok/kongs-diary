@@ -1,16 +1,26 @@
 import { graphql } from 'gatsby'
 import { Helmet } from 'react-helmet'
 import InformationCard from '../components/global/informationCard'
+import BlogCard from "../components/page/blog/blogCard"
 import React from 'react'
 
 const HomePage = ({ data }) => {
   const info = { ...data.allContentfulAbout.edges[0].node }
+  const blogPosts = data.allContentfulBlogPost.edges
   return (
-    <div className="flex flex-col max-w-prose mx-auto divide-y">
+    <div className="flex flex-col mx-auto divide-y">
       <Helmet>
         <title>{process.env.SITE_TITLE}</title>
       </Helmet>
       <InformationCard info={info} />
+      <div className="py-4">
+        <p className="mt-4 mb-8 text-xl text-center text-gray-500">Blogs</p>
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
+          {blogPosts.map(blog => (
+            <BlogCard blog={blog.node} key={blog.node.slug} />
+          ))}
+        </div>
+      </div>
     </div>
   )
 }
@@ -31,6 +41,24 @@ query {
         avator {
           title
           gatsbyImageData
+        }
+      }
+    }
+  }
+  allContentfulBlogPost(sort: {fields: publishDate, order: DESC}, limit: 6) {
+    edges {
+      node {
+        id
+        title
+        tags
+        slug
+        publishDate(locale: "zh-tw", fromNow: true)
+        heroImage {
+          title
+          gatsbyImageData(height: 100, width: 100, cropFocus: CENTER, placeholder: BLURRED)
+        }
+        description {
+            description
         }
       }
     }
