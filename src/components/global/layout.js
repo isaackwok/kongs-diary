@@ -3,8 +3,7 @@ import classnames from "classnames"
 import { Link } from "gatsby"
 
 const linkItems = [
-    { text: 'Home', to: '/' },
-    { text: 'News', to: '/news' },
+    // { text: 'News', to: '/news' },
     { text: 'Blog', to: '/blog' },
     { text: 'About', to: '/about' }
 ]
@@ -25,7 +24,7 @@ const NavigationBar = () => {
         <nav className="sticky top-0 bg-white border-b z-10">
             <div className="flex p-4 justify-between container mx-auto items-baseline">
                 <Link to="/" className="mr-8 text-xl text-primary">港港日記</Link>
-                <NavigationMenu className="hidden md:flex" items={linkItems} />
+                <NavigationMenu className="flex" items={linkItems} />
             </div>
         </nav>
     )
