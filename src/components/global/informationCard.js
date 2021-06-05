@@ -15,16 +15,16 @@ const InformationCard = ({ info }) => {
                     image={avator}
                     alt={info.name} />
             </div>
-            <div className="flex flex-col text-sm text-gray-500 md:items-center">
+            <div className="flex flex-col text-sm text-gray-500 md:items-center px-4">
                 <p className="text-xl text-gray-700">{info.name}</p>
                 <p>{info.jobTitle}</p>
                 <p>{info.company}</p>
                 <p>{info.location}</p>
                 <p className="mt-4 flex text-xl">
-                    <a className="hover:text-primary mx-2" target="_blank" rel="noreferrer" href={`mailto:${info.eMail}`}><FontAwesomeIcon icon={faEnvelope} /></a>
-                    <a className="hover:text-primary mx-2" target="_blank" rel="noreferrer" href={info.github}><FontAwesomeIcon icon={faGithub} /></a>
-                    <a className="hover:text-primary mx-2" target="_blank" rel="noreferrer" href={info.facebook}><FontAwesomeIcon icon={faFacebook} /></a>
-                    <a className="hover:text-primary mx-2" target="_blank" rel="noreferrer" href={info.instagram}><FontAwesomeIcon icon={faInstagram} /></a>
+                    <a className="hover:text-primary mr-4" target="_blank" rel="noreferrer" href={`mailto:${info.eMail}`}><FontAwesomeIcon icon={faEnvelope} /></a>
+                    <a className="hover:text-primary mr-4" target="_blank" rel="noreferrer" href={info.github}><FontAwesomeIcon icon={faGithub} /></a>
+                    <a className="hover:text-primary mr-4" target="_blank" rel="noreferrer" href={info.facebook}><FontAwesomeIcon icon={faFacebook} /></a>
+                    <a className="hover:text-primary mr-4" target="_blank" rel="noreferrer" href={info.instagram}><FontAwesomeIcon icon={faInstagram} /></a>
                 </p>
             </div>
         </div>
