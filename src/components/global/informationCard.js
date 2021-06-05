@@ -10,7 +10,8 @@ const InformationCard = ({ info }) => {
         <div className="p-4 flex md:flex-col items-center gap-4">
             <div>
                 <GatsbyImage
-                    className="w-32 h-32 md:w-40 md:h-40 object-cover rounded-full border-4 border-primary shadow-lg"
+                    className="w-32 h-32 md:w-40 md:h-40 rounded-full border-4 border-primary shadow-lg"
+                    imgClassName="object-cover rounded-full"
                     image={avator}
                     alt={info.name} />
             </div>
