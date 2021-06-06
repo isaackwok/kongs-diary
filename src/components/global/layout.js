@@ -10,12 +10,12 @@ const linkItems = [
 
 const Layout = ({ children }) => {
     return (
-        <div className="border-0">
+        <>
             <NavigationBar />
-            <main className="container mx-auto p-4">
+            <main className="container mx-auto p-4 border-0">
                 {children}
             </main>
-        </div>
+        </>
     )
 }
 
