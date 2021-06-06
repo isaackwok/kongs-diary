@@ -21,10 +21,10 @@ const InformationCard = ({ info }) => {
                 <p>{info.company}</p>
                 <p>{info.location}</p>
                 <p className="mt-4 flex text-xl">
-                    <a className="hover:text-primary mx-2" target="_blank" rel="noreferrer" href={`mailto:${info.eMail}`}><FontAwesomeIcon icon={faEnvelope} /></a>
+                    <a className="hover:text-primary mr-2" target="_blank" rel="noreferrer" href={`mailto:${info.eMail}`}><FontAwesomeIcon icon={faEnvelope} /></a>
                     <a className="hover:text-primary mx-2" target="_blank" rel="noreferrer" href={info.github}><FontAwesomeIcon icon={faGithub} /></a>
                     <a className="hover:text-primary mx-2" target="_blank" rel="noreferrer" href={info.facebook}><FontAwesomeIcon icon={faFacebook} /></a>
-                    <a className="hover:text-primary mx-2" target="_blank" rel="noreferrer" href={info.instagram}><FontAwesomeIcon icon={faInstagram} /></a>
+                    <a className="hover:text-primary ml-2" target="_blank" rel="noreferrer" href={info.instagram}><FontAwesomeIcon icon={faInstagram} /></a>
                 </p>
             </div>
         </div>
