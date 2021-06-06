@@ -19,6 +19,7 @@ const BlogPost = ({ data }) => {
         <>
             <Helmet>
                 <title>{`${blogPost.title} ｜ ${process.env.SITE_TITLE}`}</title>
+                <meta name="keywords" content={blogPost.keywords.join(", ")}></meta>
             </Helmet>
             <div className="flex flex-col gap-4 max-w-prose mx-auto">
                 <Link to="/blog" className="inline-flex items-center gap-2 hover:text-primary">
@@ -45,6 +46,7 @@ export const query = graphql`
         title
         publishDate(locale: "zh-tw", fromNow: true)
         tags
+        keywords
         heroImage {
             title
             description
