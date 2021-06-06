@@ -15,7 +15,7 @@ const BlogCard = ({ blog }) => {
                 </div>
                 <p className="mt-4 text-sm text-gray-400">{blog.publishDate}</p>
             </div>
-            <GatsbyImage className="min-w-[100px] min-h-[100px] max-w-[100px] max-h-[100px] self-center rounded" image={heroImage} alt={blog.heroImage.title} />
+            <GatsbyImage className="min-w-[100px] min-h-[100px] max-w-[100px] max-h-[100px] self-center" imgClassName="rounded" image={heroImage} alt={blog.heroImage.title} />
         </div>
     )
 }
