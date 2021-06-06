@@ -7,6 +7,7 @@ import { Link } from "gatsby"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import { Helmet } from "react-helmet"
 import "highlight.js/scss/atom-one-dark.scss"
+import TagPill from "../../components/global/TagPill"
 
 const BlogPost = ({ data }) => {
     const blogPost = data.contentfulBlogPost
@@ -27,9 +28,9 @@ const BlogPost = ({ data }) => {
                 <article className="prose prose-green mt-4">
                     <h1>
                         {blogPost.title}
-                        <div className="mt-2 text-base text-gray-400 font-normal">{blogPost.publishDate}</div>
+                        <div className="mt-2 text-sm text-gray-400 font-normal">{blogPost.publishDate}．{blogPost.tags.map(tag => <TagPill tagName={tag} key={tag} />)}</div>
                     </h1>
-                    <GatsbyImage className="mb-4" image={heroImage} alt={blogPost.heroImage.title} />
+                    <GatsbyImage className="mx-auto" image={heroImage} alt={blogPost.heroImage.title} />
                     <MDXRenderer className="prose">{blogPost.body.childMdx.body}</MDXRenderer>
                 </article>
             </div>
@@ -47,7 +48,7 @@ export const query = graphql`
         heroImage {
             title
             description
-            gatsbyImageData(placeholder: BLURRED)
+            gatsbyImageData(placeholder: BLURRED, layout: FULL_WIDTH, cropFocus: CENTER)
         }
         body {
             childMdx {
