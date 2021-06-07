@@ -44,7 +44,7 @@ export const query = graphql`
     contentfulBlogPost (id: {eq: $id}) {
         id
         title
-        publishDate(locale: "zh-tw", fromNow: true)
+        publishDate(formatString: "YYYY-MM-DD")
         tags
         keywords
         heroImage {

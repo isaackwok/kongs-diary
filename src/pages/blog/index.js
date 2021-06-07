@@ -28,7 +28,7 @@ query {
           title
           tags
           slug
-          publishDate(locale: "zh-tw", fromNow: true)
+          publishDate(formatString: "YYYY-MM-DD")
           heroImage {
             title
             gatsbyImageData(height: 100, width: 100, cropFocus: CENTER, placeholder: BLURRED)
