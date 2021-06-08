@@ -21,7 +21,7 @@ const Layout = ({ children }) => {
 
 const NavigationBar = () => {
     return (
-        <nav className="sticky top-0 bg-white border-b z-10">
+        <nav className="sticky top-0 bg-white z-10 shadow">
             <div className="flex p-4 justify-between container mx-auto items-baseline">
                 <Link to="/" className="mr-8 text-xl text-primary">港港日記</Link>
                 <NavigationMenu className="flex" items={linkItems} />
